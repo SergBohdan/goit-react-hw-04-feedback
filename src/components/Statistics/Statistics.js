@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; 
 import { FeedbackItem, FeedbackWrapper } from './StatisticsStyled';
 
 export const Statistics = ({
@@ -10,22 +10,22 @@ export const Statistics = ({
 }) => {
   return (
     <FeedbackWrapper>
-          <p>
-            Good: <FeedbackItem>{good}</FeedbackItem>
-          </p>
+      <p>
+        Good: <FeedbackItem>{good}</FeedbackItem>
+      </p>
 
-          <p>
-            Neutral: <FeedbackItem>{neutral}</FeedbackItem>
-          </p>
-          <p>
-            Bad: <FeedbackItem>{bad}</FeedbackItem>
-          </p>
+      <p>
+        Neutral: <FeedbackItem>{neutral}</FeedbackItem>
+      </p>
+      <p>
+        Bad: <FeedbackItem>{bad}</FeedbackItem>
+      </p>
 
-          <p>
-            Total: <FeedbackItem>{total}</FeedbackItem>
-          </p>
-          <p>Positive feedback: <FeedbackItem>{percent}%</FeedbackItem></p>
-        </FeedbackWrapper>
+      <p>
+        Total: <FeedbackItem>{total}</FeedbackItem>
+      </p>
+      <p>Positive feedback: <FeedbackItem>{percent}%</FeedbackItem></p>
+    </FeedbackWrapper>
   );
 };
 
@@ -33,6 +33,7 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.func.isRequired,
-  percent: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  percent: PropTypes.string.isRequired,
 };
+
