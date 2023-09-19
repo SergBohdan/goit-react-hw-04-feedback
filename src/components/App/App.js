@@ -5,6 +5,7 @@ import { Section } from 'components/Section/Section';
 import { Notification } from 'components/Notification/Notification';
 import { Container } from './AppStyled';
 import { GlobalStyle } from 'components/GlobalStyles';
+
 const App = () => {
   const [feedback, setFeedback] = useState({
     good: 0,
@@ -19,7 +20,11 @@ const App = () => {
     }));
   };
 
-  const total = feedback.good + feedback.neutral + feedback.bad;
+  const calculateTotalFeedback = () => {
+    return Object.values(feedback).reduce((acc, value) => acc + value, 0);
+  };
+
+  const total = calculateTotalFeedback();
 
   const countPositiveFeedbackPercentage = () => {
     return total ? ((feedback.good * 100) / total).toFixed(1) : 0;
